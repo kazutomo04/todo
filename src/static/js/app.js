@@ -1,6 +1,11 @@
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
+        <React.Fragment>
+            <AddItemForm onNewItem={onNewItem} />
+            {items.length === 0 && (
+                <p className="text-center">No items yet! Add one above!</p>
+            )}
         <Container>
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
@@ -11,7 +16,6 @@ function App() {
     );
 }
 
-document.write("TodoAppbyKazutomoNakamura");
 
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
