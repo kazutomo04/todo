@@ -10,7 +10,22 @@ function App() {
         </Container>
     );
 }
-
+return (
+        <React.Fragment>
+            <AddItemForm onNewItem={onNewItem} />
+            {items.length === 0 && (
+                <p className="text-center">ToDoAppbyKazutomoNakamura</p>
+            )}
+            {items.map(item => (
+                <ItemDisplay
+                    item={item}
+                    key={item.id}
+                    onItemUpdate={onItemUpdate}
+                    onItemRemoval={onItemRemoval}
+                />
+            ))}
+        </React.Fragment>
+    );
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
 
