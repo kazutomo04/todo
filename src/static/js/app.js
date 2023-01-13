@@ -11,6 +11,8 @@ function App() {
     );
 }
 
+document.write("TodoAppbyKazutomoNakamura");
+
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
 
